@@ -1,0 +1,8 @@
+# Пакеты и дериктории
+.idea
+target
+
+# Файлы
+src/main/java/org/telegramBot/bot/RegistrationData.java
+*.class
+*.jar
