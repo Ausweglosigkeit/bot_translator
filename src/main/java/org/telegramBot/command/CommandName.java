@@ -6,7 +6,16 @@ public enum CommandName {
     ABOUT("/about"),
     HELP("/help"),
     NO("nocommand"),
-    ECHO("/echo");
+    ECHO("/echo"),
+    TRANSLATE("/translate"),
+    QUIZ("/quiz"),
+    ENDQUIZ("/endquiz"),
+    AVAILABLELANGUAGE("/avaiblelanguage"),
+    SUBSCRIBE("/subscribetowords"),
+    UNSUBSCRIBE("/unsubscribetowords"),
+    SUBSCRIBECAT("/subscribetocats"),
+    UNSUBSCRIBECAT("/unsubscribetocats"),
+    REGISTRATION("/registration");
 
     private final String commandName;
 

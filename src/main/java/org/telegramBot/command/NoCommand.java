@@ -1,21 +1,22 @@
 package org.telegramBot.command;
 
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegramBot.service.SendBotMessage;
+import org.telegramBot.command.message.InformationAboutMessage;
+import org.telegramBot.service.SendBotMessageService;
 
-public class NoCommand implements Command {
-    private final SendBotMessage sendBotMessage;
+public class NoCommand extends InformationAboutMessage implements Command {
+    private final SendBotMessageService sendBotMessageService;
 
     public static final String NO_MESSAGE = "К сожалению, я вас не понимаю. Все команды начинаются с \"/\".\n" +
             "Чтобы посмотреть список команд напишите /help.";;
 
-    public NoCommand(SendBotMessage sendBotMessage) {
-        this.sendBotMessage = sendBotMessage;
+    public NoCommand(SendBotMessageService sendBotMessageService) {
+        this.sendBotMessageService = sendBotMessageService;
     }
 
 
     @Override
     public void execute(Update update) {
-        sendBotMessage.sendMessage(update.getMessage().getChatId().toString(), NO_MESSAGE);
+        sendBotMessageService.sendMessage(getStringChatId(update), NO_MESSAGE);
     }
 }
